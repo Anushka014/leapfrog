@@ -1,0 +1,21 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+li{
+	list-style : none;
+}
+
+a{
+    text-decoration: none;
+    font-family: Arial;
+}
+
+div{
+    font-family: Arial;
+}
+.clearfix:before, .clearfix:after{
+	content: "";
+	display: table;
+}

@@ -1,0 +1,25 @@
+.header-top{
+	background: #76C7C1;
+    width: 100%;
+    background: url('../images/ruler.png') repeat-x #76C7C1 left bottom;
+}
+.header-top-container{
+    position: relative;
+    padding: 16px 0px 15px 0px;
+}
+.header-bottom-overflow{
+	background: #ececec;	
+}
+
+.body-wrapper{
+    background: #f3f3f3;
+    width: 100%;
+}
+.logo-wrapper{
+	float: left;
+    width: 223px;
+    height: 49px;
+}
+
+
+
