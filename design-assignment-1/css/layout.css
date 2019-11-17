@@ -1,25 +1,24 @@
-.header-top{
-	background: #76C7C1;
-    width: 100%;
-    background: url('../images/ruler.png') repeat-x #76C7C1 left bottom;
+.container{
+    width: 1170px;
+    margin:0 auto;
 }
-.header-top-container{
-    position: relative;
-    padding: 16px 0px 15px 0px;
+.main-container{
+    float:left;
+    width:555px;
+    margin-left:88px;
 }
-.header-bottom-overflow{
-	background: #ececec;	
-}
-
-.body-wrapper{
-    background: #f3f3f3;
-    width: 100%;
-}
-.logo-wrapper{
-	float: left;
-    width: 223px;
-    height: 49px;
+.col3-inner-right{
+    float:right;
 }
 
+.left-container{
+    float:left;
+}
+.right-container{
+    margin-left:20px;
+}
 
-
+.right-container .main-container .para p a{
+    color:red;
+    text-decoration: underline;
+}

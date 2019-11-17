@@ -1,21 +1,28 @@
 *{
 	padding: 0px;
 	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 li{
-	list-style : none;
+	list-style: none;
 }
 
 a{
-    text-decoration: none;
-    font-family: Arial;
+	text-decoration: none;
 }
 
-div{
-    font-family: Arial;
-}
 .clearfix:before, .clearfix:after{
 	content: "";
-	display: table;
+	display: none;
 }
+.clearfix:after{
+	clear: both;
+}
+button{
+	cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6 {
+	color : #7c8a8a;
+}
+
