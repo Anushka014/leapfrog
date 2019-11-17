@@ -125,35 +125,35 @@ ul.breadcrumb li a{
 }
 
 
-.watch-wrapper{
+.round-wrapper{
     margin-top:60px;
 }
 
-.watch-wrapper ul li{
+.round-wrapper ul li{
     float:left;
     margin-right:23px;
 }
-.watch-wrapper ul li:last-child {
+.round-wrapper ul li:last-child {
     margin-right:0px;
 }
 
-.watches{
+.round{
     position: relative;
 }
 
 
-.watches h2{
+.round h2{
     position : absolute;
     left:44px;
     bottom:5px;
     color:#7f8f8e;
 }
 
-.watches-text-container{
+.round-text-container{
     line-height: 37px;
     margin-left:4px;
 }
-.watches-text-container h4{
+.round-text-container h4{
     color: #7f8f8e;
     text-align: center;
 }
@@ -280,7 +280,7 @@ ul.breadcrumb li a{
 .our-team-image {
 cursor: pointer;
 }
-/* active state */
+/* active state started */
 .t-active{
     display:block;
 }
@@ -294,8 +294,7 @@ button.team-button-active {
     display: block;
 }
 
-
-/* active state complet */
+/* active state completed */
 
 .our-team-main:hover .team-button button{
     background: url("../images/redbtn.png");
@@ -327,8 +326,8 @@ button.team-button-active {
     color:#da534d;
 }
 .solution-para .para{
-width:939px;
-margin:0 auto;
+    width:939px;
+    margin:0 auto;
 }
 .solution-para .para p{
     padding-top:18px;
@@ -403,20 +402,15 @@ margin:0 auto;
 .jquery-container{
     margin-bottom:67px;
 }
-
-
-.top-footer{
-
+.footer-top{
     background:url("../images/ruler3.png") repeat-x top ;
     padding-top:44px;
-    background-color:#76c7c1;
-  
-    
+    background-color:#76c7c1; 
 }
 .footer1{
     width:362px;
 }
-.top-footer .footer-header{
+.footer-top .footer-header{
     padding-bottom:28px;
 }
 
@@ -510,8 +504,6 @@ margin-bottom:45px;
 
 .footer-right-container{
     float:right;
-    
-
 }
 .footer-right-icons ul li{
     float:left;
