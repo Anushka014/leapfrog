@@ -20,3 +20,41 @@
     padding-top: 30px;
     text-align: justify;
 }
+
+.textual-content h3{
+    font-size: 14px;
+}
+
+.one-column h3, .two-column h3, .two-unequal-column h3, .four-column h3, .font-size h3, .headline-content h2, .company h3, .community h3{
+    color: #7a8f8a;
+}
+
+.one-column p, .two-column p, .two-unequal-column p, .four-column p, .font-size li, .headline-content p{
+    color: #7a8f8a;
+}
+
+.blog-content-wrapper p{
+    line-height: 19px;
+}
+.blog-content-wrapper p:first-child{
+    color:white;
+}
+.blog-content-wrapper p:last-child{
+    color:#488482;
+}
+
+.blog h4{
+    padding-top: 45px;
+    padding-bottom: 24px;
+    font-size:24px;
+    font-weight: bolder;
+    color:white;
+    font-family: cursive;
+}
+.contact-info  li{
+    color: white;
+    line-height:33px;
+}
+.contact-info  li span{
+    font-weight:bold;
+}
