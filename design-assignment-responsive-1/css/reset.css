@@ -1,0 +1,28 @@
+*{
+    padding:0px;
+	margin:0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+.clearfix:before, .clearfix:after{
+	content: "";
+	display: block;
+}
+
+.clearfix:after{
+	clear: both;
+}
+button{
+	cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6 {
+	color : #7c8a8a;
+}
