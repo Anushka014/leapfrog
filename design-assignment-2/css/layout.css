@@ -686,7 +686,7 @@ td{
         width: 5%
     }
     .search-wrapper{
-        overflow: hidden;
+        display: hidden;
     }
 
     .logo-wrapper{
@@ -821,9 +821,8 @@ td{
         width: 5%
     }
     .search-wrapper{
-        overflow: hidden;
+        display: hidden;
     }
-
     .logo-wrapper{
         float: none;
     }
