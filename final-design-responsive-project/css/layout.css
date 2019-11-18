@@ -1,0 +1,251 @@
+.header-wrapper-top{
+    background: #76c7c1;   
+    line-height: 80px;
+    overflow: auto;
+    background: url("../images/ruler.png") repeat-x #76c7c1 left bottom;
+}
+
+.header-wrapper-bottom{
+    background: #ececec;
+    line-height: 80px;
+    overflow: auto;
+}
+
+.menu-container{
+    width: 73.25em;
+    margin: 0px auto;
+}
+
+.logo-wrapper{
+    float: left;
+    width: 17.0648%;
+    padding-left: 12px;
+    padding-top: 20px;
+}
+
+.nav-wrapper{
+    float: right;
+    width: auto;
+}
+
+.nav-wrapper ul li{
+    float: left;
+    margin-left: 42px;
+}
+
+.nav-wrapper ul li a{
+    color: white;
+}
+
+.current-page-wrapper{
+    float:left;
+    width: 9.2150%;
+    padding-left: 11px;
+}
+
+.breadcrumb-wrapper{
+    float: right;
+    width: auto;
+}
+
+.breadcrumb-wrapper ul li{
+    float: left;
+}
+
+.breadcrumb-wrapper ul li span{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container{
+    background: #f3f3f3;
+}
+
+.main-container{
+    background: url("../images/arrow_design.png") no-repeat left top;
+    padding-top: 48px;
+    overflow: auto;
+}
+
+.project-slide-carousel-wrapper, .blog-slide-carousel-wrapper, .side-slide-carousel-wrapper{
+    position: relative;
+}
+
+.project-slide-carousel-wrapper .previous-button-wrapper, .project-slide-carousel-wrapper .next-button-wrapper{
+    position: absolute;
+    top: 322px;
+}
+
+.blog-slide-carousel-wrapper .previous-button-wrapper, .blog-slide-carousel-wrapper .next-button-wrapper{
+    position: absolute;
+    top: 254px;
+}
+
+.side-slide-carousel-wrapper .previous-button-wrapper, .side-slide-carousel-wrapper .next-button-wrapper{
+    position: absolute;
+    top: 81px;
+}
+
+.next-button-wrapper{
+    right: 0px;
+}
+
+.project-indicator{
+    width: 18.0887%;
+    margin: auto;
+    margin-top: 32px;
+    margin-bottom: 60px;
+    overflow: auto;
+}
+
+.carousel-indicator-wrapper ul li{
+    float: left;
+    margin-right: 5px; 
+}
+
+.blog-slideshow-container{
+    width: 74.4027%;
+    float:left;
+    margin-right: 25px;
+}
+
+.side-slideshow-container{
+    width: 23.0375%;
+    float:left;
+}
+
+.blog-indicator{
+    width: 24.0825%;
+    margin: 0px auto;
+    overflow: auto;
+    margin-top: 34px;
+    margin-bottom: 34px;
+}
+
+.side-indicator{
+    width: 40.4411%;
+    margin: 0px auto;
+    
+}
+
+.bottom-slideshow{
+    overflow: auto;
+    margin-bottom: 22px;
+}
+
+.first-row{
+    overflow: auto;
+    margin-bottom: 22px;
+}
+
+.left-image, .center-image, .right-image{
+    float: left;
+    width: 26.4705%;
+    margin-right: 25px;
+}
+
+.right-image{
+    margin-right: 0px;
+}
+
+.image-frame{
+    background: #f8f8f8;
+    position: relative;
+}
+
+.image-holder{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.card-container, .card-container-right{
+    float: left;
+    position: relative;
+    width: 23.2081%;
+    margin-right: 26px;
+}
+
+.card-container-right{
+    margin-right: 0px;
+}
+
+.info-container{
+    height: 311px;
+}
+
+.read-more{
+    position: absolute;
+    left: 32px;
+    bottom: 0px;
+}
+
+.button-container{
+    position: relative;
+    text-align: center;
+    background: #e9645b;
+}
+
+.button-container a{
+    position: absolute;
+    top: 18px;
+    left: 66px;
+    color: white;
+    
+}
+
+.content-container{
+    margin-bottom: 83px;
+    overflow: auto;
+}
+
+.collapsible-container{
+    overflow: auto;
+}
+
+.left-collapsible-container{
+    float: left;
+    width: 74.4027%;
+    
+}
+
+.right-collapsible-container{
+    float: left;
+    width: 23.1228%;
+}
+
+.collapsible-div-first{
+    margin-bottom: 11px;
+    background: #f8f8f8;
+    color: #7b8a87;    
+}
+
+.left-collapsible-div{
+    float: left; 
+    position: relative;
+}
+
+.righ-collapsible-div{
+    float: left;
+}
+
+.textual-content{
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    margin: 20px;
+}
+
+.collapsible-div-second{
+    margin-bottom: 11px;
+    background: #f8f8f8;
+    color: #7b8a87;
+    position: relative;
+}
+
+.collapsible-div-third{
+    background: #f8f8f8;
+    color: #7b8a87;
+    padding: 20px;
+}
