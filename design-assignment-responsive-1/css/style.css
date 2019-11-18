@@ -1,3 +1,7 @@
+.container{
+    width: 73.3125em;
+    margin:0 auto;
+}
 
 .header-top-bar{
     background: url('../images/ruler.png') repeat-x #76C7C1 left bottom;
@@ -30,7 +34,6 @@
 }
 
 .nav ul li a{
-    font-weight: bold;
     color: white;
     display: block;
 }
@@ -41,19 +44,15 @@
     background-size:auto;
     
 }
-
-
 .active{
     background:url("../images/hover.png");
     background-repeat: no-repeat;
     background-position: center;
 }
 .active a:before{
-    content:"ᐯ";
+    content:"v";
 
 }
-
-
 .header-bottom-bar{
     background: #ececec;
     height:80px;
@@ -79,18 +78,18 @@
     float:right;
 }
 
-ul.breadcrumb li{
+ul.breadcrumb-nav li{
     float:left;
     color:#7b8a87;
     line-height: 80px;
 }
-ul.breadcrumb li+li:before {
+ul.breadcrumb-nav li+li:before {
     padding: 0px 10px;
      color:#7b8a87;;
     content: "/\00a0";
 }
 
-ul.breadcrumb li a{
+ul.breadcrumb-nav li a{
     color:#7b8a87;
 }
 .body-wrapper{
@@ -103,7 +102,7 @@ ul.breadcrumb li a{
     line-height: 88px;
     color : #D8594A;
 }
-.para p {
+.paragraph p {
     line-height: 22px;
     color:#949a9a;
 }
@@ -189,7 +188,7 @@ ul.breadcrumb li a{
     color:#707070;
     bottom:-28px;
 } 
-.whatsay-content .para p{
+.whatsay-content .paragraph p{
     padding:18px;
     line-height:27px;
 }
@@ -258,7 +257,7 @@ ul.breadcrumb li a{
     float:left;
 }
 
-.our-team-bottom .para p{
+.our-team-bottom .paragraph p{
     font-style: italic;
     color:white;
     height:179px;
@@ -325,11 +324,11 @@ button.team-button-active {
     font-weight: lighter;
     color:#da534d;
 }
-.solution-para .para{
+.solution-paragraph .paragraph{
     width:939px;
     margin:0 auto;
 }
-.solution-para .para p{
+.solution-paragraph .paragraph p{
     padding-top:18px;
     justify-content: center;
 }
@@ -414,7 +413,7 @@ button.team-button-active {
     padding-bottom:28px;
 }
 
-.footer-para {
+.footer-paragraph {
     line-height: 26px; 
     color:white;
 }
@@ -478,13 +477,13 @@ margin-bottom:45px;
     margin-right:19px;
 }
 
-.para-foot p{
+.paragraph-foot p{
     line-height: 19px;
 }
-.para-foot p:first-child{
+.paragraph-foot p:first-child{
     color:white;
 }
-.para-foot p:last-child{
+.paragraph-foot p:last-child{
     color:#488482;
 }
 

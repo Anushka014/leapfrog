@@ -12,7 +12,7 @@
 }
 
 .menu-container{
-    width: 73.25em;
+    width: 72.5625em;
     margin: 0px auto;
 }
 
@@ -36,14 +36,19 @@
 .nav-wrapper ul li a{
     color: white;
 }
+.search-wrapper input{
+    border:5px solid red;
+    height: 25px;
+    position:absolute;
+    right:5px;
+    top:63px;
+}
 .search{
     padding-top:31px;
 }
-.search a: hover{
-    background: url("../images/search-red.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:auto;
+
+.search img: hover{
+    background: red;
 }
 
 .feature-wrapper{
@@ -105,6 +110,11 @@
     margin-top: 32px;
     margin-bottom: 60px;
     overflow: auto;
+}
+
+
+.carousel-indicator-wrapper ul li.active img:hover{
+    background-image:url("../images/red-indicator.png");
 }
 
 .carousel-indicator-wrapper ul li{
