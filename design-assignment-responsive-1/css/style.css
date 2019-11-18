@@ -159,12 +159,10 @@ ul.breadcrumb-nav li a{
 .col3-inner-right{
     float:right;
 }
-
 .col3-content-wrapper{
     float:left;
     width:272px;
-    margin-left:40px;
-   
+    margin-left:40px; 
 }
 
 .whatsay-content{

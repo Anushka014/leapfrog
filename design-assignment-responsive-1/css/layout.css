@@ -15,3 +15,61 @@
     color:red;
     text-decoration: underline;
 }
+
+@media all and (max-width: 718px){
+    .header-top-container, .header-bottom-bar, .body-wrapper{
+        overflow: hidden;
+    }
+
+    .content{
+        display: block;
+    }
+
+    .header-logo-wrapper, 
+    .about, .menu, .left, 
+    .main-wrapper, .main, .col3-right, .col3-main-right{
+        float: none;
+    }
+
+    .header-nav-wrapper, .header-nav-wrapper ul li{
+        float: none;
+    }
+
+    .left, .col3-main-right{
+        display: none;
+    }
+
+    .main-wrapper{
+        margin-bottom: 10px;
+    }
+
+    .banner{
+        display: none;
+    }
+
+    .happy-clients-hr{
+       display: none;
+    }
+
+    .happy-client-text, .page-nav{
+        float: none;
+        margin-bottom: 20px;
+    }
+
+    .company{
+        margin-right: 8px;
+    }
+
+    .blog{
+        display: none;
+    }
+
+    .date, .media{
+        float:none;
+    }
+
+    .date{
+        margin-bottom: 20px;
+    }
+
+}
