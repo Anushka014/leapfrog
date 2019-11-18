@@ -812,3 +812,146 @@ td{
 
 }
 
+@media only screen and (max-width: 360px){
+    .header-wrapper-top{
+        overflow: hidden;
+
+    }
+    .search img{
+        width: 5%
+    }
+    .search-wrapper{
+        overflow: hidden;
+    }
+
+    .logo-wrapper{
+        float: none;
+    }
+
+    .nav-wrapper{
+        float: none;
+        width: 100%;
+    }
+
+    .nav-wrapper ul li{
+        float: none;
+    }
+
+    .breadcrumb-wrapper{
+        width: 65%;
+    }
+
+    .header-wrapper-bottom{
+        overflow: hidden;
+    }
+
+    .slider, .bottom-slideshow{
+       display: none;
+    }
+    .card-container{
+        width:100%;
+    }
+    .info-container img{
+        width:20%;
+    }
+
+    .collapsible-container{
+        width: 100%;
+    }
+    .left-collapsible-container, .right-collapsible-container{
+        float: none;
+    }
+
+    .right-collapsible-container{
+        display: none;
+    }
+    .one-column{
+        width:60%;
+    }
+    .two-column{
+        width:50%;
+        float: none;
+    }
+    .two-unequal-column{
+        width:70%;
+    }
+    .four-column{
+        width:70%;
+    }
+    .font-size{
+        width:70%;
+    }
+    .headline-container{
+        width:60%;
+
+    }
+
+    .tab-container, .tab-content-container{
+        width: 100%;
+    }
+
+    .tab-container-left{
+        float: none;
+    }
+
+    .tab-container-right{
+        display: none;
+    }
+
+    .third-image-container, .fourth-image-container{
+        display: none;
+    }
+
+    .first-row-image{
+        width: 85%;
+        margin: 0px auto;
+    }
+
+    .blog{
+        display: none;
+    }
+
+    .company-general-info, .date-of-pub{
+        overflow: hidden;
+    }
+
+    .date{
+        float: none;
+    }
+
+    .media{
+        float: none;
+        margin-top: 10px;
+    }
+
+    table{
+        width: 65%;
+    }
+
+    .table-two table{
+        width: 100%;
+    }
+
+    .table-three{
+        display: none;
+    }
+    .first-image-container{
+        width:20%;
+    }
+    .second-image-container{
+        display: none;
+    }
+    
+
+    .second-row-image{
+        width: 40%;
+    }
+
+    .first-image-second-row, .second-image-second-row{
+        float: none;
+        margin:10px auto;
+    }
+
+
+    }
+
