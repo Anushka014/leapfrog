@@ -28,13 +28,17 @@
     	float:none;
 
     }
-    /*.round img{
+    .round img{
+    	padding-left: 8px;
     	width:50%;
     }
-    .round-container{
-    	display: block;
+    .round h2{
+    	padding-right:12px;
     }
-*/
+   /* .round-container{
+    	display: block;
+    }*/
+
     .col2-left{
     	width:70%;
     }
@@ -51,6 +55,9 @@
     .col2-left1{
     	padding-left: 2%;
 
+    }
+    .col3-content-wrapper{
+    	display:none;
     }
 
 /*    .header-logo-wrapper, 
