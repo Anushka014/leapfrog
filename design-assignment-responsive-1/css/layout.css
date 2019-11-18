@@ -16,12 +16,12 @@
     text-decoration: underline;
 }
 
-@media all and (max-width: 718px){
-    .header-top-container, .header-bottom-bar, .body-wrapper{
+@media all and (max-width: 768px){
+    .header-top-container, .header-bottom-container, .body-wrapper,.solution-wrapper,.happy-client-wrapper,.footer-wrapper{
         overflow: hidden;
     }
 
-    .content{
+    .row{
         display: block;
     }
 
