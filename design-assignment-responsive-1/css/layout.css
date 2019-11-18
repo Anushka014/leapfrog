@@ -60,6 +60,9 @@
     	display:none;
     	/*margin:10px auto;*/
     }
+    .tab1 img{
+    	width:20%;
+    }
 
 /*    .header-logo-wrapper, 
     .about, .menu, .left, 

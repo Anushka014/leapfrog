@@ -941,7 +941,19 @@ td{
     .second-image-container{
         display: none;
     }
-    
+    .tab-content-container{
+        width: 40%;
+    }
+    .collapsible-container{
+        width:40%;
+    }
+    .right-collapsible-div{
+      display: none;
+    }
+
+    .table-two, .table-one table{
+        width:40%;
+    }
 
     .second-row-image{
         width: 40%;
@@ -950,6 +962,15 @@ td{
     .first-image-second-row, .second-image-second-row{
         float: none;
         margin:10px auto;
+    }
+    .footer-wrapper{
+        width:50%;
+    }
+    .tab-button-container{
+        display:none;
+    }
+    .tab-content-container{
+        display:none;
     }
 
 
