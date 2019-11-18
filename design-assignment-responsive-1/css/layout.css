@@ -24,8 +24,36 @@
     .row{
         display: block;
     }
+    .main-container{
+    	float:none;
 
-    .header-logo-wrapper, 
+    }
+    /*.round img{
+    	width:50%;
+    }
+    .round-container{
+    	display: block;
+    }
+*/
+    .col2-left{
+    	width:70%;
+    }
+    .our-team-wrapper{
+    	width:70%;
+    	float: none;
+    }
+    .solution-header{
+    	width:70%;
+    }
+    .solution-paragraph{
+    	width:70%;
+    }
+    .col2-left1{
+    	padding-left: 2%;
+
+    }
+
+/*    .header-logo-wrapper, 
     .about, .menu, .left, 
     .main-wrapper, .main, .col3-right, .col3-main-right{
         float: none;
@@ -71,5 +99,5 @@
     .date{
         margin-bottom: 20px;
     }
+*/
 
-}
