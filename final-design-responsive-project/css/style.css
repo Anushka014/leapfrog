@@ -1,0 +1,68 @@
+
+.header-wrapper{
+	color: white;
+	font-family: 'Poppins', sans-serif;
+
+}
+
+nav a{
+	text-decoration: none;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+
+}
+
+.nav-button{
+	text-align: center;
+	color:white;
+	font-weight: bold;
+	border-radius: 30px;
+}
+
+a{
+	text-decoration: none; 
+}
+.announcement-container{
+	font-size: 20px;
+}
+.announcement-title h1{
+	font-family: Times New Roman;
+	font-size: 50px;
+}
+.num{
+	font-size: 32px;
+	font-weight: bolder;
+}
+.countdown-wrapper{
+	opacity: 0.8;
+}
+
+.about-button{
+	background:#ffffff;
+	font-family: 'Playfair Display', serif;
+}
+
+.bg-wrapper .num{
+	text-align: center;
+	font-size: 38px;
+	color: white;
+}
+.bg-wrapper .text{
+	text-align: center;
+	font-size: 21px;
+	color: white;
+}
+.speaker-about{
+	color:white;
+	text-align: left;
+}
+.speaker-about h2{
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	margin-bottom: 15px;
+}
+
+.designation{
+	color: #e1e1e1;
+}
+
