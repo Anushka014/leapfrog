@@ -539,6 +539,10 @@ section p{
     background-image: linear-gradient(-100deg, #f0474a , #fdaf19);
     height: 438px;
 }
+.ticket-content {
+    background-image: linear-gradient(-100deg, #f0474a , #fdaf19);
+    height: 200px;
+}
 .ticket-wrapper-2 .ticket-main{
 	width: 35em;
 }
