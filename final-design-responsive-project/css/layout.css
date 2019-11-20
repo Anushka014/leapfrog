@@ -36,6 +36,226 @@ nav a{
 	padding-left: 55px;
 	float:right;
 }
+.header-wrapper{
+	color: white;
+	font-family: 'Poppins', sans-serif;
+
+}
+
+nav a{
+	text-decoration: none;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+
+}
+
+.nav-button{
+	text-align: center;
+	color:white;
+	font-weight: bold;
+	border-radius: 30px;
+}
+
+a{
+	text-decoration: none; 
+}
+.announcement-container{
+	font-size: 20px;
+}
+.announcement-title h1{
+	font-family: Times New Roman;
+	font-size: 50px;
+}
+.num{
+	font-size: 32px;
+	font-weight: bolder;
+}
+.countdown-wrapper{
+	opacity: 0.8;
+}
+
+.about-button{
+	background:#ffffff;
+	font-family: 'Playfair Display', serif;
+}
+
+.bg-wrapper .num{
+	text-align: center;
+	font-size: 38px;
+	color: white;
+}
+.bg-wrapper .text{
+	text-align: center;
+	font-size: 21px;
+	color: white;
+}
+.speaker-about{
+	color:white;
+	text-align: left;
+}
+.speaker-about h2{
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	margin-bottom: 15px;
+}
+
+.designation{
+	color: #e1e1e1;
+}
+
+.speakers-body h1{
+	font-family: 'Playfair Display', serif;
+	text-align: center;
+	margin-bottom: 52px;
+}
+
+.testimonial-wrapper header h1{
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+
+}
+
+.testimonial-wrapper header p{
+	text-align: center;
+	font-size: 20px;
+}
+
+
+.ticket-main h1{
+	text-align: center;
+	color: white;
+	font-family: 'Playfair Display', serif;
+	padding-bottom: 30px;
+
+}
+
+.ticket-main {
+    width: 49em;
+    margin: 0 auto;
+    padding-top: 120px;
+    overflow: auto;
+}
+
+.event-title{
+		border-top: 2px solid #e9e9e9;
+		margin-top: 60px;
+		padding-top: 40px;
+}
+.event-container{
+	text-align: center;
+}
+
+.event-container h1{
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+
+}
+
+.event-title{
+		border-top: 2px solid #e9e9e9;
+		margin-top: 60px;
+		padding-top: 40px;
+}
+
+.event-title h2{
+	font-family: 'Playfair Display', serif;
+		
+}
+.media h2{
+	padding-top: 60px;
+	border-top: 1px solid black;
+	font-family: 'Playfair Display', serif;
+
+}
+.media{
+	padding-top: 60px;
+
+}
+.location h1{
+	font-family: 'Playfair Display', serif;
+}
+.social-icons{
+	border-top: 1px  inset #e1e1e1;
+	padding-top: 36px;
+}
+.get-updates{
+	text-align: center;
+	color: white;
+	font-family: 'Playfair Display', serif;
+	padding-bottom: 30px;
+	height: 150px;
+}
+
+.get-updates .text{
+	font-size: 30px;
+	font-family: 'Playfair Display', serif;
+	margin-right: 20px;
+}
+
+input::placeholder{
+	color: white;
+}
+
+.footer-left p{
+	color:#cecece;
+}
+.footer-left h2{
+	color:white;
+	font-family: 'Playfair Display', serif;
+
+}
+
+.footer-middle ul li{
+	list-style: none;
+	padding-top: 30px;
+}
+
+.footer-middle li a{
+	color:#cecece;
+}
+.footer-middle h2{
+	color:white;
+	font-family: 'Playfair Display', serif;
+}
+.footer-right h2{
+	color:white;
+	font-family: 'Playfair Display', serif;
+}
+.footer-gallery{
+	padding-top: 30px;
+	list-style: none;
+}
+
+.footer-image{
+	width: 4em;
+	height: 62px;
+	float: left;
+	margin-right: 12px;
+}
+
+.footer-top-wrapper{
+	background: black;
+	padding-bottom: -120px; 
+	overflow: auto;
+}
+
+.footer-bottom-wrapper{
+	text-align: center;
+	color: #cecece;
+	background: #272828;
+	line-height: 94px;
+}
+
+.designer{
+	text-decoration: underline;
+	font-family: 'Playfair Display', serif;
+}
+
+.arrow{
+	width:30px;
+	height: 15px;
+	display: inline-block;
+}
 
 .nav-button{
 	float: right;
@@ -257,159 +477,6 @@ section p{
 }
 .schedule-heading h2, .schedule-para p{
 	text-align: center;
-}
-.speakers-body h1{
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    margin-bottom: 52px;
-}
-
-.testimonial-wrapper header h1{
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-
-}
-
-.testimonial-wrapper header p{
-    text-align: center;
-    font-size: 20px;
-}
-
-
-.ticket-main h1{
-    text-align: center;
-    color: white;
-    font-family: 'Playfair Display', serif;
-    padding-bottom: 30px;
-
-}
-
-.ticket-main {
-    width: 49em;
-    margin: 0 auto;
-    padding-top: 120px;
-    overflow: auto;
-}
-
-.event-title{
-        border-top: 2px solid #e9e9e9;
-        margin-top: 60px;
-        padding-top: 40px;
-}
-.event-container{
-    text-align: center;
-}
-
-.event-container h1{
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-
-}
-
-.event-title{
-        border-top: 2px solid #e9e9e9;
-        margin-top: 60px;
-        padding-top: 40px;
-}
-
-.event-title h2{
-    font-family: 'Playfair Display', serif;
-        
-}
-.media h2{
-    padding-top: 60px;
-    border-top: 1px solid black;
-    font-family: 'Playfair Display', serif;
-
-}
-.media{
-    padding-top: 60px;
-
-}
-.location h1{
-    font-family: 'Playfair Display', serif;
-}
-.social-icons{
-    border-top: 1px  inset #e1e1e1;
-    padding-top: 36px;
-}
-.get-updates{
-    text-align: center;
-    color: white;
-    font-family: 'Playfair Display', serif;
-    padding-bottom: 30px;
-    height: 150px;
-}
-
-.get-updates .text{
-    font-size: 30px;
-    font-family: 'Playfair Display', serif;
-    margin-right: 20px;
-}
-
-input::placeholder{
-    color: white;
-}
-
-.footer-left p{
-    color:#cecece;
-}
-.footer-left h2{
-    color:white;
-    font-family: 'Playfair Display', serif;
-
-}
-
-.footer-middle ul li{
-    list-style: none;
-    padding-top: 30px;
-}
-
-.footer-middle li a{
-    color:#cecece;
-}
-.footer-middle h2{
-    color:white;
-    font-family: 'Playfair Display', serif;
-}
-.footer-right h2{
-    color:white;
-    font-family: 'Playfair Display', serif;
-}
-.footer-gallery{
-    padding-top: 30px;
-    list-style: none;
-}
-
-.footer-image{
-    width: 4em;
-    height: 62px;
-    float: left;
-    margin-right: 12px;
-}
-
-.footer-top-wrapper{
-    background: black;
-    padding-bottom: -120px; 
-    overflow: auto;
-}
-
-.footer-bottom-wrapper{
-    text-align: center;
-    color: #cecece;
-    background: #272828;
-    line-height: 94px;
-}
-
-.designer{
-    text-decoration: underline;
-    font-family: 'Playfair Display', serif;
-}
-
-.arrow{
-    width:30px;
-    height: 15px;
-    display: inline-block;
 }
 .pastspeakers-container{
 	overflow: auto; 
@@ -689,6 +756,7 @@ footer{
 	margin-top: 10px;
 
 }
+
 .nav-wrapper .icon{
     display: none;
 }
@@ -714,3 +782,4 @@ footer{
     text-align: left;
   }
 }
+
