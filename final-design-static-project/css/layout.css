@@ -478,6 +478,21 @@ section p{
 .schedule-heading h2, .schedule-para p{
 	text-align: center;
 }
+.schedule-body{
+	width:33.017em;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 44px;
+
+}
+.inner-tabs{
+	width: 20em;
+	margin: 0 auto;
+	border-radius: 20px;
+	margin-top: 25px;
+	line-height:28px;
+	margin-bottom: 67px;
+}
 .pastspeakers-container{
 	overflow: auto; 
 }
