@@ -501,7 +501,6 @@ section p{
 	background: white;
 	padding-top: 100px;
 	margin-bottom: 165px;
-
 }
 
 .testimonials-main{
@@ -525,7 +524,6 @@ section p{
 	padding-left:50px; 
 	margin-top: 10px;
 	margin-bottom: 80px;
-
 }
 
 .testimonial-content{
@@ -729,7 +727,6 @@ section p{
 	height: 40px;
 	border-radius: 20px;
 	border:none;
-
 }
 
 footer{
@@ -769,11 +766,5 @@ footer{
 .footer-left p{
 	margin-bottom: 30px;
 	margin-top: 10px;
-
-}
-
-.footer-gallery{
-
-
 
 }
