@@ -21,10 +21,16 @@ for (index in imageArray) {
     indicator.appendChild(indicatorList);
 }
 
-//sets the next click and backclick function.
+
+//width of the indicator.
+carouselIndicator.style.width = (INDICATOR_WIDTH * imageArray.length) + (INDICATOR_DISTANCE * (imageArray.length - 1)) + 'px';
+indicator.style.width = carouselIndicator.style.width; 
+
 indicator.children[0].classList.add('active');
+//sets the next click and backclick function.
 next.addEventListener('click', function (e) {
     autoSlide();
+
 });
 
 previous.addEventListener('click', function (e) {
@@ -63,7 +69,7 @@ function backSlide() {
     if (currentIndex < 0) {
         currentIndex = imageArray.length - 1;
     }
-    addAttributes()
+   addAttributes() 
 }
 //clears the active status of the class indicator.
 function clearAllAttributes(){
@@ -83,3 +89,20 @@ function addAttributes(){
     imageArray[currentIndex].classList.add("active");
     list[currentIndex].classList.add("active");
 }
+
+
+function fadeOutEffect() {
+    var target = document.getElementsByClassName("container-image-wrapper");
+    var fadeEffect = setInterval(function () {
+        if (!target.style.opacity) {
+            target.style.opacity = 1;
+        }
+        if (target.style.opacity > 0) {
+            target.style.opacity -= 0.1;
+        } else {
+            clearInterval(fadeEffect);
+        }
+    }, 1000);
+}
+
+document.getElementById("container-image-wrapper").addEventListener('click', fadeOutEffect);
