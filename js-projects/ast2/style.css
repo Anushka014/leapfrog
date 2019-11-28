@@ -3,8 +3,8 @@ li{
 }
  
 .carousel-container{
-    width: 400px;
-    height: 400px;
+    width: 25em;
+    height: 25em;
     overflow: hidden;
     margin: 0px auto;
 }
