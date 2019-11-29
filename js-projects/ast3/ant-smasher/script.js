@@ -15,10 +15,10 @@ function Box(boxElement, boxCount) {
   var that = this;
 
   //creates img tag having class rect.
-  this.setUpGame = function () {
+  this.setUpGame = function (index) {
     var rect = document.createElement('img');
     rect.setAttribute('class', 'rect');
-    // rect.setAttribute('id', index);
+    rect.setAttribute('id', index);
     rect.setAttribute('src', 'images/ant.png');
     this.boxElement.appendChild(rect);
     rect.style.width = this.BOX_WIDTH + 'px';
@@ -37,7 +37,7 @@ function Box(boxElement, boxCount) {
     this.rect.style.top = this.Y_AXIS + 'px';
   }
 
-  // this.animateElements.onclick = function(e) {
+  // this.img.onclick = function(e) {
   //     console.log((e.target.style.display = 'none'));
   // };
 
@@ -70,16 +70,20 @@ function Game(boxElement, boxCount) {
   this.BOX_HEIGHT = 30;
   this.boxCount = boxCount || 10;
 
+  this.remove = function(id){
+    boxArray.splice(id, 1);
+  }
+
   this.generateRandomElements = function () {
 
     for (var i = 0; i < this.boxCount; i++) {
-      var box = new Box(boxElement, 10).setUpGame();
+      var box = new Box(boxElement, 10).setUpGame(i);
       this.X_AXIS = box.generateRandomNumber(this.BOX_WIDTH, this.BOX_ELEMENT_WIDTH - this.BOX_WIDTH);
       this.Y_AXIS = box.generateRandomNumber(this.BOX_WIDTH, this.BOX_ELEMENT_HEIGHT - this.BOX_HEIGHT);
       box.setCoordinates(this.X_AXIS, this.Y_AXIS);
       boxArray.push(box);
     }
-    setInterval(this.animateElements.bind(this), 10);
+    setInterval(this.animateElements.bind(this), 40);
   }
 
   // this.calculateDistance = function (x1, y1, x2, y2) {
@@ -108,10 +112,10 @@ function Game(boxElement, boxCount) {
   }
    //this function moves every box in the main box
   this.animateElements = function () {
-    for (var i = 0; i < this.boxCount; i++) {
+    for (var i = 0; i < boxArray.length; i++) {
       boxArray[i].moveElements();
 
-      for (var j = 0; j < this.boxCount; j++) {
+      for (var j = 0; j < boxArray.length; j++) {
         if (i == j) {
           continue;
         }
@@ -124,15 +128,17 @@ function Game(boxElement, boxCount) {
 
 //start
 var boxElement = document.getElementById('box-wrapper');
-new Game(boxElement, 10).generateRandomElements();
-// var element = boxElement.getElementsByTagName('img');
-// for (var i = 0; i < element.length; i++) {
-//   element[i].addEventListener('click', function (e) {
-//     e.preventDefault();
-//     var id = e.target.parentNode.getAttribute('id');
-//     console.log(id);
-//     game.remove(id);
-//     this.remove(e.target.parentNode);
+var game=new Game(boxElement, 10);
+game.generateRandomElements();
 
-//   })
-// }
+var element = boxElement.getElementsByTagName('img');
+for (var i = 0; i < element.length; i++) {
+  element[i].addEventListener('click', function (e) {
+    e.preventDefault();
+    var id = e.target.parentNode.getAttribute('id');
+    console.log(id);
+    game.remove(id);
+    this.remove(e.target.parentNode);
+
+  })
+}
