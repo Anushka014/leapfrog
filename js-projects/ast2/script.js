@@ -11,6 +11,7 @@ var slider = new Slider(carousel, imageWrapper, previous, next, carouselIndicato
 slider.setStyle();
 slider.setUpList();
 setTimeout(slider.autoSlide,3000);
+//reset timeout add
 
 
 function Slider(carousel, imageWrapper, previous, next, carouselIndicator){
