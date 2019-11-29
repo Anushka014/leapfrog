@@ -62,6 +62,7 @@ function Box(boxElement, boxCount) {
 }
 
 function Game(boxElement, boxCount) {
+  var interval;
   var boxArray = [];
   this.boxElement = boxElement;
   this.BOX_ELEMENT_WIDTH = 600;
@@ -71,7 +72,9 @@ function Game(boxElement, boxCount) {
   this.boxCount = boxCount || 10;
 
   this.remove = function(id){
+    clearInterval(interval);
     boxArray.splice(id, 1);
+    interval=setInterval(this.animateElements.bind(this), 40);
   }
 
   this.generateRandomElements = function () {
@@ -83,7 +86,7 @@ function Game(boxElement, boxCount) {
       box.setCoordinates(this.X_AXIS, this.Y_AXIS);
       boxArray.push(box);
     }
-    setInterval(this.animateElements.bind(this), 40);
+    interval=setInterval(this.animateElements.bind(this), 40);
   }
 
   // this.calculateDistance = function (x1, y1, x2, y2) {
@@ -95,19 +98,7 @@ function Game(boxElement, boxCount) {
       rect1.X_AXIS + rect1.BOX_WIDTH > rect2.X_AXIS &&
       rect1.Y_AXIS < rect2.Y_AXIS + rect2.BOX_HEIGHT &&
       rect1.Y_AXIS + rect1.BOX_HEIGHT > rect2.Y_AXIS) {
-
-        if(rect2.X_AXIS-rect1.X_AXIS- rect1.BOX_WIDTH <= 0){
-          rect1.velocity.dx = -rect1.velocity.dx;
-          rect1.velocity.dy = rect1.velocity.dy;
-          rect2.velocity.dx = rect2.velocity.dx;
-          rect2.velocity.dy = rect2.velocity.dy;
-        }
-        if(rect2.Y_AXIS-rect1.Y_AXIS-rect1.BOX_HEIGHT <= 0){
-          rect1.velocity.dx = rect1.velocity.dx;
-          rect1.velocity.dy = -rect1.velocity.dy;
-          rect2.velocity.dx = rect2.velocity.dx;
-          rect2.velocity.dy = rect2.velocity.dy;
-        }
+      return true;
     }
   }
    //this function moves every box in the main box
@@ -119,8 +110,13 @@ function Game(boxElement, boxCount) {
         if (i == j) {
           continue;
         }
-        this.checkCollision(boxArray[i], boxArray[j]);
-        
+        //reverse direction 
+        if(this.checkCollision(boxArray[i], boxArray[j])){
+          boxArray[i].velocity.dx = -boxArray[i].velocity.dx ;
+          boxArray[i].velocity.dy = -boxArray[i].velocity.dy ; 
+           boxArray[j].velocity.dx = -boxArray[j].velocity.dx ;
+          boxArray[j].velocity.dy = -boxArray[j].velocity.dy ;
+        }
       }
     }
   }
