@@ -74,7 +74,7 @@ function Game(boxElement, boxCount) {
   this.remove = function(id){
     clearInterval(interval);
     boxArray.splice(id, 1);
-    interval=setInterval(this.animateElements.bind(this), 40);
+    this.animateElements();
   }
 
   this.generateRandomElements = function () {
@@ -103,6 +103,7 @@ function Game(boxElement, boxCount) {
   }
    //this function moves every box in the main box
   this.animateElements = function () {
+    clearInterval(interval);
     for (var i = 0; i < boxArray.length; i++) {
       boxArray[i].moveElements();
 
@@ -119,6 +120,7 @@ function Game(boxElement, boxCount) {
         }
       }
     }
+    interval=setInterval(this.animateElements.bind(this), 40);
   }
 }
 
