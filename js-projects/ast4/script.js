@@ -43,7 +43,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore){
 	this.setupGameAssets = function(){
 		var opponent = document.createElement('div');
 		opponent.setAttribute('class','opponent');
-		this.gameContainer.appendChild();
+		this.gameContainer.appendChild(opponent);
 		this.opponent = opponent;
 	}
 
