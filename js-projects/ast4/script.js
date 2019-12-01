@@ -1,23 +1,40 @@
-function CarGame(playButton, gameContainer){
+function CarGame(playButton, gameContainer, scoreBoard, highestScore){
 	this.playButton = playButton;
 	this.gameContainer = gameContainer;
+	this.scoreBoard = scoreBoard;
+	this.highestScore = highestScore;
 	this.opponent = null;
+	this.playGame = null;
+	this.highest = window.localStorage.getItem('highest') || 0;
+	this.frames = 0;
 	this.car;
 	this.canPlayGame = false;
-	this.opponentPositionArray = [110, 260, 410];
-	this.xPosition = 0;
+	this.opponentPositionArray = [100, 240, 410];
+	this.obstacleBackgroundArray = ['../images/car.png', '../images/car.png', '../images/car.png'];
+	this.obstacleArray = [];
+	this.playerCar = {
+	xPosition: 240,
+	yPosition: 490
+	};
+	this.obstacleCar = {
+    xPosition: Math.random()-0.5,
+    yPosition: -1*(Math.floor(Math.random()*100))
+    };
+	this.yPosition = [0, 0, 0];
+	this.animFrame;
 	this.delay;
 	var setUpGameContainer;
 	var that = this;
-	var x = 0;
+	const SPEED = 0.5;
 
-	//onbutton click the lane moves with animatebackground function.
+	//onbutton click the lane moves with animatebackground function. 1st
 	this.playButton.onclick = function(e){
 		e.preventDefault();
 		if(that.canPlayGame){
 			return;
 		}
 		that.canPlayGame = true;
+		that.highestScore.innerHTML = that.highest;
 		setUpGameContainer = new SetUpGameContainer(that.gameContainer);
 		setUpGameContainer.animateBackground();
 		that.startGame();
@@ -30,67 +47,103 @@ function CarGame(playButton, gameContainer){
 		this.opponent = opponent;
 	}
 
-	this.drawGameAssets = function(){
-		for(var i = 0; i < this.opponentPositionArray.length; i ++){
-			this.setupGameAssets();
-		}
-	}
+	this.drawGameAssets = function(i) {
+		var yPosition = 0;
+	    var obstacle = this.setupGameAssets();
+	    obstacle.style.background = 'url("' + this.obstacleBackgroundArray[i] + '")';
+	    obstacle.style.left = this.opponentPositionArray[i] + 'px';
+	    obstacle.style.top = yPosition + 'px';
+	    this.obstacleArray.push(obstacle);
+	  }
 
-	this.updateGameAssets = function(opponent){
+	this.updateGameAssets = function(opponent, i){
+		if (this.yPosition[i] >= 560) {
+	      this.frames++;
+	      this.yPosition[i] = -1*(Math.floor(Math.random()*1000));
+	      console.log(this.yPosition[i])
+	      this.scoreBoard.innerHTML = this.frames;
+	    }
 		this.xPosition += 2;
 		opponent.style.top = this.xPosition + 'px';
 	}
 
-	this.animateGameAssets = function(opponent){
-		this.updateGameAssets(opponent);
-		requestAnimationFrame(function(){
+	this.animateGameAssets = function(){
+		var random = Math.floor(Math.random() * 270) + 100;
+	this.animFrame = requestAnimationFrame(this.animateGameAssets.bind(this));
+	if (this.animFrame % random == 0 && this.obstacleArray.length < 3 && Math.random() < 0.5) {
+	  this.drawGameAssets(this.obstacleArray.length);
+	}
+	for (var i = 0; i < this.obstacleArray.length; i++) {
+	  this.obstacleCar.xPosition = this.opponentPositionArray[i];
+	  // for(var j=0;j<this.obstacleArray.length;j++){
+	  //   if(i==j){
+	  //     continue;
+	  //   }
+	  //   else if(this.obstacleArray.length==3){
+	  //     if(Math.abs(this.yPosition[i] - this.yPosition[j]) <= 200)
+	  //       break;
+	  //   }
+	  // }
+	  this.updateGameAssets(this.obstacleArray[i], i);
 
-			that.updateGameAssets(opponent);
-			if(x !== 10){
-				x++;
-
-			}
-		});
+	  if (this.checkCollision(i)) {
+	    if (this.frames > this.highest) {
+	      window.localStorage.setItem('highest', that.frames);
+	    }
+	    this.playGame.resetGame();
+	  }
 	}
 
-	this.startGame = function(){
-		if(this.canPlayGame){
-			new PlayGame(setUpGameContainer.positionPlayerCar(),setUpGameContainer, this);
-		}
-	}
 }
 
+  this.checkCollision = function (i) {
+    if (this.playerCar.xPosition < this.obstacleCar.xPosition + 70 &&
+      this.playerCar.xPosition + 70 > this.obstacleCar.xPosition &&
+      this.playerCar.yPosition < this.yPosition[i] + 100 &&
+      this.playerCar.yPosition + 100 > this.yPosition[i]) {
+      return true;
+    }
+  }
+
+  this.startGame = function () {
+    if (this.canPlayGame) {
+      this.animateGameAssets();
+      this.car = setUpGameContainer.positionPlayerCar();
+      this.playGame = new PlayGame(this.car, setUpGameContainer, this);
+    }
+  }
+}
+
+//4th
 function PlayGame(player, setUpGameContainer, carGame){
 	this.player = player;
 	this.setUpGameContainer = setUpGameContainer;
 	this.carGame = carGame;
-	this.playerPosition = 240;
+	// this.playerPosition = 240;
 	this.isCrashed = false;
 	var that = this;
 	document.onkeydown = function(e){
-		if(!this.isCrashed){
+		if(!that.isCrashed){
 			switch(e.which){
-				case 37:
-				that.playerPosition -= 2;
-                    break;
-                case 39:
-                    that.playerPosition += 2;
-                    break;
-            }
-            that.isCrashed = that.movePlayer(that.playerPosition);
-			}
-			else{
-				that.resetGame();
+				case 65:
+		          that.carGame.playerCar.xPosition -= 150;
+		          break;
+		        case 68:
+		          that.carGame.playerCar.xPosition += 150;
+		          break;
+		    }
+		    that.isCrashed = that.movePlayer(that.carGame.playerCar.xPosition);
+		}
+		else{
+			that.resetGame();
 			}
 		}
 		this.resetGame = function () {
         cancelAnimationFrame(this.setUpGameContainer.animationFrame);
-        alert("Game Over");
-        this.player.remove();
-        this.isCrashed = false;
-        this.setUpGameContainer.animateBackground();
-        this.carGame.startGame();
-    }
+        cancelAnimationFrame(this.carGame.animFrame);
+	    alert("Game Over");
+	    location.reload();
+	  }
 
     this.movePlayer = function (position) {
         if (position < 82 || position > 450) {
@@ -105,7 +158,7 @@ function SetUpGameContainer(gameContainer){
 	this.gameContainer = gameContainer;
 	this.animationFrame;
 	var position = 0;
-
+    //second part
 	this.animateBackground = function(){
 		++position;
 		this.gameContainer.style.backgroundPosition = '0 ' + position + 'px';
@@ -122,4 +175,6 @@ function SetUpGameContainer(gameContainer){
 //start
 var playButton = document.getElementById('start-game');
 var gameContainer = document.getElementById('game-container');
-new CarGame(playButton, gameContainer);
+var scoreBoard = document.getElementById('score-board');
+var highestScore = document.getElementsByTagName('span')[0];
+new CarGame(playButton, gameContainer, scoreBoard, highestScore);
