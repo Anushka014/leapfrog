@@ -1,3 +1,4 @@
+
 function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.playButton = playButton;
   this.gameContainer = gameContainer;
@@ -5,16 +6,18 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.highestScore = highestScore;
   this.opponent = null;
   this.playGame = null;
+  //it access the highest key and returns the value as string.
   this.highest = window.localStorage.getItem('highest') || 0;
   this.frames = 0;
   this.car;
   this.canPlayGame = false;
+  //lane position.
   this.opponentPositionArray = [90, 240, 390];
   this.obstacleBackgroundArray = ['images/car1.png', 'images/car1.png', 'images/car1.png'];
   this.obstacleArray = [];
   this.playerCar = {
-    xPosition: 240,
-    yPosition: 490
+    xPosition: 240,//left
+    yPosition: 490 //top
   };
   this.obstacleCar = {
     xPosition: Math.random()-0.5,
@@ -22,11 +25,13 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   };
   this.yPosition = [0, 0, 0];
   this.animFrame;
-  this.delay;
+  // this.delay;
   var setUpGameContainer;
   var that = this;
   const SPEED = 0.5;
 
+
+  //first step
   this.playButton.onclick = function (e) {
     if (that.canPlayGame) {
       return;
@@ -37,14 +42,14 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
     setUpGameContainer.animateBackground();
     that.startGame();
   }
-
+  //creates div for opponent car.
   this.setupGameAssets = function () {
     var opponent = document.createElement('div');
     opponent.setAttribute('class', 'opponent');
     this.gameContainer.appendChild(opponent);
     return opponent;
   }
-
+  //sets the opponent car background pixel.
   this.drawGameAssets = function (i) {
     var yPosition = 0;
     var obstacle = this.setupGameAssets();
@@ -54,6 +59,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
     this.obstacleArray.push(obstacle);
   }
 
+  //if  opponent pass the lane frame increases with 1 point.
   this.updateGameAssets = function (opponent, i) {
     if (this.yPosition[i] >= 560) {
       this.frames++;
@@ -64,24 +70,18 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
     this.yPosition[i] += 2;
     opponent.style.top = this.yPosition[i] + 'px';
   }
-
+  //4th
   this.animateGameAssets = function () {
+    //returns random integer from 0 to 269.
     var random = Math.floor(Math.random() * 270) + 100;
+    // opponent car ending point is animframe.
     this.animFrame = requestAnimationFrame(this.animateGameAssets.bind(this));
+    //delays each opponent car.
     if (this.animFrame % random == 0 && this.obstacleArray.length < 3 && Math.random() < 0.5) {
       this.drawGameAssets(this.obstacleArray.length);
     }
     for (var i = 0; i < this.obstacleArray.length; i++) {
       this.obstacleCar.xPosition = this.opponentPositionArray[i];
-      // for(var j=0;j<this.obstacleArray.length;j++){
-      //   if(i==j){
-      //     continue;
-      //   }
-      //   else if(this.obstacleArray.length==3){
-      //     if(Math.abs(this.yPosition[i] - this.yPosition[j]) <= 200)
-      //       break;
-      //   }
-      // }
       this.updateGameAssets(this.obstacleArray[i], i);
 
       if (this.checkCollision(i)) {
@@ -91,8 +91,6 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
         this.playGame.resetGame();
       }
     }
-
-
 
   }
 
@@ -104,7 +102,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
       return true;
     }
   }
-
+  //3rd step
   this.startGame = function () {
     if (this.canPlayGame) {
       this.animateGameAssets();
@@ -158,7 +156,7 @@ function SetUpGameContainer(gameContainer) {
   this.gameContainer = gameContainer;
   this.animationFrame;
   var position = 0;
-
+  //2nd step
   this.animateBackground = function () {
     ++position;
     this.gameContainer.style.backgroundPosition = '0 ' + position + 'px';
@@ -174,6 +172,7 @@ function SetUpGameContainer(gameContainer) {
 
 }
 
+//start
 var playButton = document.getElementById('start-game');
 var gameContainer = document.getElementById('game-container');
 var scoreBoard = document.getElementById('score-board');
