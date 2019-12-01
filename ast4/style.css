@@ -1,6 +1,6 @@
 .game-wrapper{
     width: 1000px;
-    height: 560px;
+    height: 640px;
     background: green;
     margin: 0px auto;
     overflow: hidden;
@@ -12,8 +12,8 @@
 
 .game-container{
     float: left;
-    width: 550px;
-    height: 560px;
+    width: 600px;
+    height: 640px;
     background: url("images/track.png") repeat-y;
     position: relative;
 }
@@ -53,16 +53,16 @@
 
 .player-car{
     width: 70px;
-    height: 70px;
+    height: 100px;
     background: url('images/tank.png');
     position: absolute;
-    top: 490px;
+    top: 530px;
     left: 260px;
 }
 
 .opponent{
     width: 70px;
-    height: 70px;
+    height: 100px;
     background:  url('images/car.png');
     position: absolute;
     /*left: 90px;*/

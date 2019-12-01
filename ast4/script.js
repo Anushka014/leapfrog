@@ -9,12 +9,12 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.frames = 0;
   this.car;
   this.canPlayGame = false;
-  this.opponentPositionArray = [90, 240, 390];
-  this.obstacleBackgroundArray = ['images/car1.png', 'images/car1.png', 'images/car1.png'];
+  this.opponentPositionArray = [110, 260, 410];
+  this.obstacleBackgroundArray = ['images/car4.png', 'images/car2.png', 'images/car3.png'];
   this.obstacleArray = [];
   this.playerCar = {
-    xPosition: 240,
-    yPosition: 490
+    xPosition: 260,
+    yPosition: 530
   };
   this.obstacleCar = {
     xPosition: Math.random()-0.5,
@@ -55,7 +55,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   }
 
   this.updateGameAssets = function (opponent, i) {
-    if (this.yPosition[i] >= 560) {
+    if (this.yPosition[i] >= 640) {
       this.frames++;
       this.yPosition[i] = -1*(Math.floor(Math.random()*1000));
       console.log(this.yPosition[i])
