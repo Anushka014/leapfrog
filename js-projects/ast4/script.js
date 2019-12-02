@@ -30,7 +30,6 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   
   var setUpGameContainer;
   var that = this;
-  const SPEED = 0.5;
 
 
   //first step
@@ -63,7 +62,6 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
 
   //if  opponent pass the lane frame increases with 1 point.
   this.updateGameAssets = function (opponent, i) {
-    this.c = -1;
     if (this.yPosition[i] >= 560) {
       this.frames++;
       this.increaseDifficulty = true;
@@ -110,8 +108,8 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.checkCollision = function (i) {
     if (this.playerCar.xPosition < this.obstacleCar.xPosition + 70 &&
       this.playerCar.xPosition + 70 > this.obstacleCar.xPosition &&
-      this.playerCar.yPosition < this.yPosition[i] + 100 &&
-      this.playerCar.yPosition + 100 > this.yPosition[i]) {
+      this.playerCar.yPosition < this.yPosition[i] + 70 &&
+      this.playerCar.yPosition + 70 > this.yPosition[i]) {
       return true;
     }
   }
@@ -156,7 +154,7 @@ function PlayGame(player, setUpGameContainer, carGame) {
   }
 
   this.movePlayer = function (position) {
-    if (position < 82 || position > 450) {
+    if (position < 0 || position > 550) {
       return true;
     }
     this.player.style.left = position + 'px';
