@@ -68,3 +68,15 @@
     /*left: 90px;*/
 }
 
+.bullet{
+    width: 30px;
+    height: 27px;
+    position: absolute;
+}
+
+.boost{
+    width: 30px;
+    height: 35px;
+    position: absolute;
+}
+

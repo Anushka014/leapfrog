@@ -35,8 +35,8 @@ function Box(boxElement, boxCount) {
     this.rect.style.left = this.X_AXIS + 'px';
     this.rect.style.top = this.Y_AXIS + 'px';
   }
+  
   //condition to limit the box inside the wrapper.
-
   this.moveElements = function () {
     if ((this.X_AXIS + this.BOX_WIDTH + this.velocity.dx) > this.BOX_ELEMENT_WIDTH || (this.X_AXIS + this.velocity.dx) < 0) {
       this.velocity.dx = -this.velocity.dx;
