@@ -76,10 +76,10 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
       //increases the speed when frame is more than 10 .
       this.increaseDifficulty = true;
       var random = -1 * (Math.floor(Math.random() * 500 + 500));
-      if(Math.abs(random) - Math.abs(this.yPosition[i-1]) <= 200){
+      // if(Math.abs(random) - Math.abs(this.yPosition[i-1]) <= 200){
         
-       random = -1 * (Math.floor(Math.random() * 1000));
-      }
+      //  random = -1 * (Math.floor(Math.random() * 1000));
+      // }
       this.yPosition[i] = random;
       this.scoreBoard.innerHTML = this.frames;
     }
