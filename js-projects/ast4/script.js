@@ -4,6 +4,8 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.gameContainer = gameContainer;
   this.scoreBoard = scoreBoard;
   this.highestScore = highestScore;
+  // this.bulletWidth = 70;
+  // this.bulletHeight = 70;
   this.opponent = null;
   this.playGame = null;
   //it access the highest key and returns the value as string.
@@ -13,7 +15,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.car;
   this.canPlayGame = false;
   //lane position.
-  this.opponentPositionArray = [90, 240, 390];
+  this.opponentPositionArray = [80, 220, 370];
   this.obstacleBackgroundArray = ['images/car1.png', 'images/car1.png', 'images/car1.png'];
   this.obstacleArray = [];
   this.increaseDifficulty = true;
@@ -26,8 +28,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
     yPosition: -1*(Math.floor(Math.random()*100))
   };
   this.yPosition = [0, 0, 0];
-  this.animFrame;
-  
+  this.animFrame; 
   var setUpGameContainer;
   var that = this;
 
@@ -50,6 +51,14 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
     this.gameContainer.appendChild(opponent);
     return opponent;
   }
+
+  //bullet div
+  this.bulletAssets = function(){
+    var bullet = document.createElement('div');
+    bullet.setAttribute('class','bullet');
+    this.gameContainer.appendChild(bullet);
+    return bullet;
+  }
   //sets the opponent car background pixel.
   this.drawGameAssets = function (i) {
     var yPosition = 0;
@@ -64,6 +73,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.updateGameAssets = function (opponent, i) {
     if (this.yPosition[i] >= 560) {
       this.frames++;
+      //increases the speed when frame is more than 10 .
       this.increaseDifficulty = true;
       var random = -1 * (Math.floor(Math.random() * 500 + 500));
       if(Math.abs(random) - Math.abs(this.yPosition[i-1]) <= 200){
@@ -74,7 +84,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
       this.scoreBoard.innerHTML = this.frames;
     }
     if (this.frames % 10 == 0 && this.increaseDifficulty && this.frames!==50) {
-      this.countTime += 0.5;
+      this.countTime += 1;
       this.increaseDifficulty=false;  
     }
     this.yPosition[i] += this.countTime;
@@ -88,7 +98,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
     // opponent car ending point is animframe.
     this.animFrame = requestAnimationFrame(this.animateGameAssets.bind(this));
     //delays each opponent car.
-    if (this.animFrame % random == 0 && this.obstacleArray.length < 3 && Math.random() < 0.5) {
+    if (this.animFrame % random == 0 && this.obstacleArray.length < 3 && Math.random() < 1) {
       this.drawGameAssets(this.obstacleArray.length);
     }
     for (var i = 0; i < this.obstacleArray.length; i++) {
@@ -102,14 +112,13 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
         this.playGame.resetGame();
       }
     }
-
   }
 
   this.checkCollision = function (i) {
-    if (this.playerCar.xPosition < this.obstacleCar.xPosition + 70 &&
-      this.playerCar.xPosition + 70 > this.obstacleCar.xPosition &&
-      this.playerCar.yPosition < this.yPosition[i] + 70 &&
-      this.playerCar.yPosition + 70 > this.yPosition[i]) {
+    if (this.playerCar.xPosition < this.obstacleCar.xPosition + 90 &&
+      this.playerCar.xPosition + 90 > this.obstacleCar.xPosition &&
+      this.playerCar.yPosition < this.yPosition[i] + 90 &&
+      this.playerCar.yPosition + 90 > this.yPosition[i]) {
       return true;
     }
   }
@@ -154,7 +163,7 @@ function PlayGame(player, setUpGameContainer, carGame) {
   }
 
   this.movePlayer = function (position) {
-    if (position < 0 || position > 550) {
+    if (position < 0 || position > 450) {
       return true;
     }
     this.player.style.left = position + 'px';
@@ -181,7 +190,6 @@ function SetUpGameContainer(gameContainer) {
     this.gameContainer.appendChild(car);
     return car;
   }
-
 }
 
 //start

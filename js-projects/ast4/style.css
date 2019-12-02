@@ -12,7 +12,7 @@
 
 .game-container{
     float: left;
-    width: 550px;
+    width: 540px;
     height: 560px;
     background: url("images/track.png") repeat-y;
     position: relative;
@@ -61,8 +61,8 @@
 }
 
 .opponent{
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     background:  url('images/car.png');
     position: absolute;
     /*left: 90px;*/
