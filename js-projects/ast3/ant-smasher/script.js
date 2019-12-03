@@ -125,7 +125,5 @@ for (var i = 0; i < element.length; i++) {
     var id = e.target.parentNode.getAttribute('id');
     this.remove(e.target.parentNode);
     game.remove(id);
-    
-
   })
 }
