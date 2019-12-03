@@ -194,9 +194,9 @@ function PlayGame(player, setUpGameContainer, carGame) {
     this.updateBulletPosition();
     this.aniFrame=requestAnimationFrame(this.moveBullets.bind(this));
     for (var i = 0; i < this.carGame.obstacleArray.length ; i++) {
-      console.log(this.carGame.playerCar.xPosition,this.bulletPosition.yPosition);
+      // console.log(this.carGame.playerCar.xPosition,this.bulletPosition.yPosition);
       if (this.carGame.playerCar.xPosition === this.carGame.opponentPositionArray[i]) {
-        console.log(i,this.bulletPosition.yPosition);
+        // console.log(i,this.bulletPosition.yPosition);
         if (this.checkBulletCollision(i, this.bulletPosition.yPosition)) {
           this.carGame.obstacleArray[i].display='none';
           this.carGame.yPosition[i] = -1*Math.floor(Math.random()*300+200);
@@ -210,54 +210,54 @@ function PlayGame(player, setUpGameContainer, carGame) {
    this.checkBulletCollision = function (i, y) {
 
     if (y <= this.carGame.yPosition[i] + 90 && y + 27 > this.carGame.yPosition[i]) {
-      console.log("collided");
+      // console.log("collided");
       return true;
     }
   }
-//   this.generateRandomBoosters = function (i) {
-//     this.boostPosition.yPosition = Math.floor(Math.random() * 605);
-//     var boost = document.createElement('div');
-//     boost.setAttribute('class', 'boost');
-//     boost.style.background = 'url("images/coin.png")';
-//     boost.style.left = this.carGame.opponentPositionArray[i];
-//     boost.style.top = this.boostPosition.yPosition;
-//     this.carGame.gameContainer.appendChild(boost);
-//     this.boostObject = boost;
-//     this.boostArray.push(boost);
-//     this.boostYPos[i] = this.boostPosition.yPosition;
-//   }
-//   this.updateBoosters = function (i) {
-//     this.boostYPos[i] += 1;
-//     this.boostArray[i].style.top = this.boostYPos[i] + 'px';
-//   }
+  this.generateRandomBoosters = function (i) {
+    this.boostPosition.yPosition = Math.floor(Math.random() * 605);
+    var boost = document.createElement('div');
+    boost.setAttribute('class', 'boost');
+    boost.style.background = 'url("images/coin.png")';
+    boost.style.left = this.carGame.opponentPositionArray[i] +'px';
+    boost.style.top = this.boostPosition.yPosition + 'px';
+    this.carGame.gameContainer.appendChild(boost);
+    this.boostObject = boost;
+    this.boostArray.push(boost);
+    this.boostYPos[i] = this.boostPosition.yPosition;
+  }
+  this.updateBoosters = function (i) {
+    this.boostYPos[i] += 1;
+    this.boostArray[i].style.top = this.boostYPos[i] + 'px';
+  }
 
-//   this.moveBoosters = function () {
-//     f = requestAnimationFrame(this.moveBoosters.bind(this));
-//     if (f % 100 == 0 && this.boostArray.length < 3 && Math.random() < 0.5) {
-//       this.generateRandomBoosters(this.boostArray.length);
-//     }
-//     for (var i = 0; i < this.boostArray.length; i++) {
-//       this.boostPosition.xPosition = this.carGame.opponentPositionArray[i]
-//       this.updateBoosters(i);
-//       if (this.collectBoost(i)) {
-//         this.boostYPos[i] = -1 * Math.floor(Math.random() * 300 + 200);
-//         if (this.bulletCount < this.maximumAmmo)
-//           this.bulletCount++;
-//         console.log(this.bulletCount);
-//         break;
-//       }
-//     }
-//   }
+  this.moveBoosters = function () {
+    f = requestAnimationFrame(this.moveBoosters.bind(this));
+    if (f % 100 == 0 && this.boostArray.length < 3 && Math.random() < 0.5) {
+      this.generateRandomBoosters(this.boostArray.length);
+    }
+    for (var i = 0; i < this.boostArray.length; i++) {
+      this.boostPosition.xPosition = this.carGame.opponentPositionArray[i];
+      this.updateBoosters(i);
+      if (this.collectBoost(i)) {
+        this.boostYPos[i] = -1 * Math.floor(Math.random() * 300 + 200);
+        if (this.bulletCount < this.maximumAmmo)
+          this.bulletCount++;
+        console.log(this.bulletCount);
+        break;
+      }
+    }
+  }
 
-// this.collectBoost = function (i) {
-//     if (this.carGame.playerCar.xPosition < this.boostPosition.xPosition + 30 &&
-//       this.carGame.playerCar.xPosition + 70 > this.boostPosition.xPosition &&
-//       this.carGame.playerCar.yPosition < this.boostYPos[i] + 35 &&
-//       this.carGame.playerCar.yPosition + 70 > this.boostYPos[i]) {
-//       return true;
-//     }
-//   }
-//   this.moveBoosters();
+this.collectBoost = function (i) {
+    if (this.carGame.playerCar.xPosition < this.boostPosition.xPosition + 30 &&
+      this.carGame.playerCar.xPosition + 70 > this.boostPosition.xPosition &&
+      this.carGame.playerCar.yPosition < this.boostYPos[i] + 35 &&
+      this.carGame.playerCar.yPosition + 70 > this.boostYPos[i]) {
+      return true;
+    }
+  }
+  this.moveBoosters();
 
   this.resetGame = function () {
     cancelAnimationFrame(this.setUpGameContainer.animationFrame);
