@@ -18,7 +18,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.obstacleArray = [];
   this.increaseDifficulty = true;
   this.playerCar = {
-    xPosition: 240,//left
+    xPosition: 230,//left
     yPosition: 490 //top
   };
   this.obstacleCar = {
@@ -87,6 +87,7 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
     if (this.animFrame % random == 0 && this.obstacleArray.length < 3 && Math.random() < 1) {
       this.drawGameAssets(this.obstacleArray.length);
     }
+    //obstacle car x position value 
     for (var i = 0; i < this.obstacleArray.length; i++) {
       this.obstacleCar.xPosition = this.opponentPositionArray[i];
       this.updateGameAssets(this.obstacleArray[i], i);
@@ -120,13 +121,13 @@ function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
 
 function PlayGame(player, setUpGameContainer, carGame) {
   this.player = player;
+  this.boostObject = null;
   this.setUpGameContainer = setUpGameContainer;
   this.carGame = carGame;
-  this.boostObject = null;
   this.isCrashed = false;
   this.bulletObject = null;
   this.bulletPosition = {
-    yPosition: 503
+    yPosition: 490
   }
   this.boostPosition = {
     xPosition: 0,
@@ -193,7 +194,9 @@ function PlayGame(player, setUpGameContainer, carGame) {
     this.updateBulletPosition();
     this.aniFrame=requestAnimationFrame(this.moveBullets.bind(this));
     for (var i = 0; i < this.carGame.obstacleArray.length ; i++) {
+      console.log(this.carGame.playerCar.xPosition,this.bulletPosition.yPosition);
       if (this.carGame.playerCar.xPosition === this.carGame.opponentPositionArray[i]) {
+        console.log(i,this.bulletPosition.yPosition);
         if (this.checkBulletCollision(i, this.bulletPosition.yPosition)) {
           this.carGame.obstacleArray[i].display='none';
           this.carGame.yPosition[i] = -1*Math.floor(Math.random()*300+200);
@@ -205,7 +208,9 @@ function PlayGame(player, setUpGameContainer, carGame) {
     }
   }
    this.checkBulletCollision = function (i, y) {
-    if (y <= this.carGame.yPosition[i]+100 && y+27 > this.carGame.yPosition[i]) {
+
+    if (y <= this.carGame.yPosition[i] + 90 && y + 27 > this.carGame.yPosition[i]) {
+      console.log("collided");
       return true;
     }
   }
