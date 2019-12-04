@@ -1,4 +1,3 @@
-
 function CarGame(playButton, gameContainer, scoreBoard, highestScore) {
   this.playButton = playButton;
   this.gameContainer = gameContainer;
