@@ -293,7 +293,6 @@ function SetUpGameContainer(gameContainer) {
     this.gameContainer.style.backgroundPosition = '0 ' + position + 'px';
     this.animationFrame = requestAnimationFrame(this.animateBackground.bind(this));
   }
-
   //initiate the car div
   this.positionPlayerCar = function () {
     var car = document.createElement('div');
