@@ -5,11 +5,18 @@ var frameCount = 0;
 var numRows = 10;
 var numCols = 15;
 var numWaves = 2; //waves
-var y;
 
-function draw() {
+class Helix {
+    constructor(canvas) {
+        this.canvas = canvas;
+        this.ctx = this.canvas.getContext('2d');
+        this.y;
+
+    }
+
+ start = () =>{
   // ctx.clearRect(83,112, canvas.width-165, canvas.height-219);
-  ctx.clearRect(0,0, canvas.width, canvas.height);
+  this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
 
   var x = 0
   var colOffset = 0;
@@ -38,8 +45,8 @@ function draw() {
         var circleRadius = sizeOffset * maxCircleRadius;
         // var my_gradient = ctx.createLinearGradient('70deg', 'yellow','pink');
 
-        ctx.beginPath();
-        ctx.arc(x, y, circleRadius, 0, Math.PI * 2, false);
+        this.ctx.beginPath();
+        this.ctx.arc(x, y, circleRadius, 0, Math.PI * 2, false);
          // var grd=ctx.createLinearGradient(0,0,170,0);
          //  grd.addColorStop(0,colors);
          //  grd.addColorStop(1,"white");
@@ -47,17 +54,22 @@ function draw() {
          //  ctx.fillStyle=grd;
          //  ctx.fillRect(20,20,150,100);
 
-        ctx.fillStyle = '#e17da4';    
+        this.ctx.fillStyle = '#e17da4';    
         // '#ffae73'
-        ctx.fill();
-        ctx.closePath();
+        this.ctx.fill();
+        this.ctx.closePath();
       }
     }
   }
 }
-
-setInterval(draw, 20);
+init = () => {
+        setInterval(this.start, 35);
+    }
+}
 
 //start
 var canvas = document.getElementById('helix');
-var ctx = canvas.getContext('2d');
+new Helix(canvas).init();
+
+var canvas1 = document.getElementById('helix1');
+new Helix(canvas1).init();
